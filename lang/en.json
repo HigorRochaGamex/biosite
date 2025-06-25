@@ -1,0 +1,14 @@
+{
+  "projetos": "Proyectos",
+  "categoria_minecraft": "Minecraft (Bedrock)",
+  "titulo_categoria_minecraft": "Minecraft (Bedrock)",
+  "download_windows": "🟢 Descargar Minecraft Windows",
+  "download_bedrock": "🟢 Descargar Minecraft Bedrock",
+  "skins_3d_4d": "🟢 Skins 3D/4D de Minecraft",
+  "marketplace_gratis": "🟢 Marketplace Gratis",
+  "servidor_realm": "🟢 Servidor Realm Bedrock",
+  "servidor_java_bedrock": "🟡 Servidor Java & Bedrock",
+  "modal_msg": "Serás redirigido a Discord para saber más sobre <strong id=\"nomeProjeto\"></strong>.",
+  "continuar": "Continuar",
+  "cancelar": "Cancelar"
+}
