@@ -8,6 +8,15 @@
   <link rel="icon" href="perfil.png" type="image/png"> <!-- Adiciona o favicon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
+<!-- Substitua o bloco do status-flutuante pelo abaixo -->
+<div id="status-flutuante">
+  <div class="discord-btn-wrapper">
+    <a href="https://discord.gg/CybN8xW7xa" target="_blank" class="btn-discord" title="Entrar no grupo do Discord">
+      <i class="fab fa-discord"></i> Entrar no Discord
+    </a>
+  </div>
+  <img src="img/rpc.png" alt="RPC">
+</div>
 <body>
 
   <canvas id="rain"></canvas>
@@ -35,9 +44,10 @@
     <div class="botao-projetos">
       <button onclick="toggleCategorias()" data-i18n="projetos">Projetos</button>
 
-      <div id="categoriasProjetos" class="botoes-categorias" style="display: none;">
-        <button onclick="toggleCategoria('minecraft')" data-i18n="categoria_minecraft">Minecraft (Bedrock)</button>
-      </div>
+        <div id="categoriasProjetos" class="botoes-categorias" style="display: none;">
+    <button onclick="toggleCategoria('minecraft')" data-i18n="categoria_minecraft">Minecraft (Bedrock)</button>
+    <button onclick="toggleCategoria('idemoji')" data-i18n="categoria_idemoji">ID Emojis BOT</button>
+  </div>
     </div>
 
     <div id="projetosMinecraft" class="projetos-categoria" style="display: none;">
@@ -54,6 +64,17 @@
         </div>
       </div>
     </div>
+    
+    <div id="projetosIdemoji" class="projetos-categoria" style="display: none;">
+  <div class="fundo-categoria" style="background-image: url('img/idemoji-bg.jpg');">
+    <h2 data-i18n="titulo_categoria_idemoji">Site de ID Emoji</h2>
+    <div class="botoes-projetos">
+      <button class="projeto-btn ativo" onclick="abrirConfirmacao('Site de ID Emoji', 'https://higorrochagamex.github.io/id-bot/')" data-i18n="site_idemoji">🟢 Site de ID Emoji</button>
+      <!-- Adicione mais projetos se quiser -->
+    </div>
+  </div>
+</div>
+
   </div>
 
   <!-- Modal -->
