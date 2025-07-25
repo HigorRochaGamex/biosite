@@ -372,3 +372,14 @@ button:hover {
 #status-flutuante .btn-discord i {
   font-size: 1.5em;
 }
+@media (max-width: 768px) {
+  #status-flutuante img {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #status-flutuante img,
+  #status-flutuante .btn-discord {
+    display: none;
+  }
+}
