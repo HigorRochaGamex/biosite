@@ -66,21 +66,21 @@ canvas#rain {
 }
 
 button {
-  background: #1f1f1f;
-  color: white;
-  border: none;
-  padding: 14px 28px;
+  background-color: #007bff; /* Azul padrão */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 10px 15px; /* Espaçamento interno */
   margin: 10px auto;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
   display: block;
 }
 
 button:hover {
-  background: #333;
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
 .botao-revelado {
@@ -102,115 +102,6 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.musica-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  color: #ffffffcc;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px 14px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #00000050;
-}
-
-.musica-player i.fa-compact-disc {
-  font-size: 28px;
-  transition: transform 0.3s ease;
-}
-
-.girando {
-  animation: girar 2s linear infinite;
-}
-
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.controles-musica {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.controles-musica button {
-  background: #1f1f1f;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.controles-musica button:hover {
-  background: #333;
-}
-
-#controleVolume {
-  width: 80px;
-  accent-color: #00bfff;
-}
-
-.botoes-categorias button,
-.botoes-projetos button {
-  background-color: #222;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.3s;
-}
-
-.botoes-categorias button:hover,
-.botoes-projetos button:hover {
-  background-color: #444;
-}
-
-.projetos-categoria {
-  text-align: center;
-  padding: 20px;
-}
-
-.fundo-categoria {
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px black;
-}
-
-.fundo-categoria h2 {
-  background-color: rgba(0,0,0,0.6);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.projeto-btn.ativo {
-  border-left: 5px solid limegreen;
-}
-
-.projeto-btn.ausente {
-  border-left: 5px solid gold;
-}
-
-.projeto-btn.descontinuado {
-  border-left: 5px solid crimson;
 }
 
 /* Modal flutuante de confirmação */
@@ -383,3 +274,233 @@ button:hover {
     display: none;
   }
 }
+
+/* Estilo para o botão do menu lateral */
+.menu-lateral-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: #444; /* Fundo cinza */
+  color: #fff; /* Texto branco */
+  border: none;
+  padding: 6px 10px; /* Reduzindo ainda mais o espaçamento interno */
+  cursor: pointer;
+  font-size: 16px; /* Diminuindo o tamanho da fonte */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra mais discreta */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-lateral-btn:hover {
+  background: #555; /* Fundo cinza mais claro ao passar o mouse */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
+}
+
+.menu-lateral-btn:active {
+  background: #333; /* Fundo cinza mais escuro ao clicar */
+}
+
+/* Estilo para o menu lateral com bordas mais arredondadas e mais fino */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px; /* Reduzindo a largura */
+  height: 100%;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: white;
+  z-index: 10000;
+  display: block;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  border-radius: 15px; /* Bordas mais arredondadas */
+}
+
+.menu-lateral.oculto {
+  display: none !important;
+}
+
+/* Adicionando bordas brancas ao redor do menu lateral */
+#menuLateral {
+  border: 2px solid white; /* Contorno branco */
+  border-bottom: 2px solid white; /* Contorno branco na parte inferior */
+}
+
+/* Cabeçalho do menu com foto de perfil */
+.menu-header {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 3px solid #444;
+  box-shadow: inset 0 0 15px #000, 0 0 10px #222;
+  border-radius: 15px 15px 0 0; /* Bordas arredondadas apenas no topo */
+}
+
+.menu-header canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.menu-header .menu-profile,
+.menu-header .fechar-menu {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.9) 50%, transparent 100%);
+  z-index: 0;
+}
+
+.menu-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  object-fit: cover;
+  z-index: 2; /* Garante que a foto de perfil fique acima da chuva */
+  position: relative; /* Necessário para que o z-index funcione */
+}
+
+.menu-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu-lateral .fechar-menu {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.menu-lateral .fechar-menu:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 20px 15px; /* Espaço no topo/baixo e nas laterais da lista inteira */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-lateral ul li {
+  margin: 4px 0 !important; /* Força uma margem pequena entre os itens */
+}
+
+.menu-lateral ul li:first-child {
+  order: -1; /* Move o primeiro item para o topo */
+}
+
+.menu-lateral ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px; /* Diminuindo o tamanho da fonte */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 6px 12px !important; /* Reduzindo o espaçamento interno */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-lateral ul li a:hover {
+  background: #333; /* Fundo cinza escuro ao passar o mouse */
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais discreta */
+}
+
+/* 2. Regra da Imagem (Ícone) - VERSÃO MÍNIMA */
+.menu-lateral ul li a img {
+  width: 28px !important;   /* Reduzindo a largura do ícone */
+  height: 28px !important;  /* Reduzindo a altura do ícone */
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-lateral {
+    width: 240px;
+  }
+
+  .menu-header {
+    padding: 15px 12px;
+  }
+
+  .menu-profile img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-profile-name {
+    font-size: 16px;
+  }
+
+  .menu-lateral ul {
+    padding: 20px 12px 12px 12px;
+  }
+
+  .menu-lateral ul li {
+    margin: 10px 0;
+  }
+
+  .menu-lateral ul li a {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .menu-lateral-btn {
+    top: 15px;
+    left: 15px;
+    padding: 10px 14px;
+    font-size: 20px;
+  }
+
+  .menu-lateral .fechar-menu {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+  }
+}
+

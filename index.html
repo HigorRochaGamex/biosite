@@ -5,18 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>higor_rocha1123</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="perfil.png" type="image/png"> <!-- Adiciona o favicon -->
+  <link rel="stylesheet" href="musica.css" />
+  <link rel="icon" href="perfil.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
-<!-- Substitua o bloco do status-flutuante pelo abaixo -->
-<div id="status-flutuante">
-  <div class="discord-btn-wrapper">
-    <a href="https://discord.gg/CybN8xW7xa" target="_blank" class="btn-discord" title="Entrar no grupo do Discord">
-      <i class="fab fa-discord"></i> Entrar no Discord
-    </a>
-  </div>
-  <img src="img/rpc.png" alt="RPC">
-</div>
 <body>
 
   <canvas id="rain"></canvas>
@@ -31,6 +23,14 @@
   </div>
 </div>
 
+<!-- Botão para abrir o menu lateral -->
+<button id="menuLateralBtn" class="menu-lateral-btn" style="left: 20px; right: auto;" onclick="toggleMenuLateral()">☰</button>
+
+<!-- Menu lateral -->
+<div id="menuLateral" class="menu-lateral oculto">
+  <!-- O conteúdo do menu será carregado dinamicamente ou referenciado ao menu.html -->
+  <iframe src="menu.html" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
 
   <div class="perfil">
     <img src="perfil.png" alt="Foto de Perfil" />
@@ -41,39 +41,7 @@
       <a href="https://youtube.com/@kironndev" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
 
-    <div class="botao-projetos">
-      <button onclick="toggleCategorias()" data-i18n="projetos">Projetos</button>
-
-        <div id="categoriasProjetos" class="botoes-categorias" style="display: none;">
-    <button onclick="toggleCategoria('minecraft')" data-i18n="categoria_minecraft">Minecraft (Bedrock)</button>
-    <button onclick="toggleCategoria('idemoji')" data-i18n="categoria_idemoji">ID Emojis BOT</button>
-  </div>
-    </div>
-
-    <div id="projetosMinecraft" class="projetos-categoria" style="display: none;">
-      <div class="fundo-categoria" style="background-image: url('img/minecraft-bg.jpg');">
-        <h2 data-i18n="titulo_categoria_minecraft">Minecraft (Bedrock)</h2>
-
-        <div class="botoes-projetos">
-          <button class="projeto-btn ativo" onclick="abrirConfirmacao('Download Minecraft Windows', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="download_windows">🟢 Download Minecraft Windows</button>
-          <button class="projeto-btn ativo" onclick="abrirConfirmacao('Download Minecraft Bedrock', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="download_bedrock">🟢 Download Minecraft Bedrock</button>
-          <button class="projeto-btn ativo" onclick="abrirConfirmacao('Minecraft Skins 3D/4D', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="skins_3d_4d">🟢 Minecraft Skins 3D/4D</button>
-          <button class="projeto-btn ativo" onclick="abrirConfirmacao('Marketplace Grátis', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="marketplace_gratis">🟢 Marketplace Grátis</button>
-          <button class="projeto-btn ativo" onclick="abrirConfirmacao('Servidor Realm Bedrock', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="servidor_realm">🟢 Servidor Realm Bedrock</button>
-          <button class="projeto-btn ausente" onclick="abrirConfirmacao('Servidor Java & Bedrock', 'https://discord.com/invite/s5rXNPj9f7')" data-i18n="servidor_java_bedrock">🟡 Servidor Java & Bedrock</button>
-        </div>
-      </div>
-    </div>
-    
-    <div id="projetosIdemoji" class="projetos-categoria" style="display: none;">
-  <div class="fundo-categoria" style="background-image: url('img/idemoji-bg.jpg');">
-    <h2 data-i18n="titulo_categoria_idemoji">Site de ID Emoji</h2>
-    <div class="botoes-projetos">
-      <button class="projeto-btn ativo" onclick="abrirConfirmacao('Site de ID Emoji', 'https://higorrochagamex.github.io/id-bot/')" data-i18n="site_idemoji">🟢 Site de ID Emoji</button>
-      <!-- Adicione mais projetos se quiser -->
-    </div>
-  </div>
-</div>
+    <!-- Projetos removidos daqui; conteúdo agora em projetos.html -->
 
   </div>
 
@@ -90,24 +58,47 @@
     </div>
   </div>
 
-  <!-- Música -->
-  <div class="musica-player">
-    <i id="iconeMusica" class="fas fa-compact-disc girando"></i>
-    <div class="controles-musica">
-      <button onclick="toggleMusica()" id="playPauseBtn">
-        <i class="fas fa-pause"></i>
-      </button>
-      <button onclick="proximaMusica()" title="Próxima">
-        <i class="fas fa-forward"></i>
-      </button>
-      <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1">
+  <!-- Player de Música Integrado -->
+  <div id="musicaPlayerContainer">
+    <div id="musicaPlayer">
+      <!-- Ícone de disco -->
+      <i id="iconeMusica" class="fas fa-compact-disc"></i>
+      
+      <!-- Barra de progresso e tempo -->
+      <div class="progress-container">
+        <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1">
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      
+      <!-- Controles principais -->
+      <div class="controles-musica">
+        <button id="playPauseBtn" title="Play/Pause">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="proximaMusicaBtn" title="Próxima">
+          <i class="fas fa-forward"></i>
+        </button>
+        <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1" title="Volume">
+      </div>
     </div>
+    
+    <!-- Elemento de áudio -->
+    <audio id="audioMusica"></audio>
   </div>
 
-  <audio id="audioMusica" autoplay loop></audio>
+  <div id="menu-sections" style="display: none;">
+  <section id="discord-section" class="menu-section">Seção Discord</section>
+  <section id="youtube-section" class="menu-section">Seção Youtube</section>
+  <section id="projetos-section" class="menu-section">Seção Projetos</section>
+</div>
 
-  <script src="script.js"></script>
   <script src="rain.js"></script>
+  <script src="script.js"></script>
   <script src="lang.js"></script>
+  <script src="musica.js"></script>
 </body>
 </html>
+

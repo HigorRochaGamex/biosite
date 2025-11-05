@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Youtube Canais</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="musica.css">
+    <link rel="icon" href="perfilredondo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <!-- Removendo o menu e aplicando o mesmo fundo e animação do index -->
+  <canvas id="rain"></canvas>
+
+  <!-- Player de Música Integrado -->
+  <div id="musicaPlayerContainer">
+    <div id="musicaPlayer">
+      <!-- Ícone de disco -->
+      <i id="iconeMusica" class="fas fa-compact-disc"></i>
+      
+      <!-- Barra de progresso e tempo -->
+      <div class="progress-container">
+        <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1">
+        <div class="time-display">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      
+      <!-- Controles principais -->
+      <div class="controles-musica">
+        <button id="playPauseBtn" title="Play/Pause">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="proximaMusicaBtn" title="Próxima">
+          <i class="fas fa-forward"></i>
+        </button>
+        <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1" title="Volume">
+      </div>
+    </div>
+    
+    <!-- Elemento de áudio -->
+    <audio id="audioMusica"></audio>
+  </div>
+
+  <div id="seletorIdioma" class="idioma-box oculto">
+    <div class="idiomas">
+      <button data-set-lang="pt" title="Português">🇧🇷</button>
+      <button data-set-lang="en" title="English">🇺🇸</button>
+      <button data-set-lang="es" title="Español">🇪🇸</button>
+      <button data-set-lang="ar" title="العربية">🇸🇦</button>
+    </div>
+  </div>
+
+  <div class="perfil">
+    <h1 style="display: flex; align-items: center;">
+      <img src="img/yt.png" alt="Ícone do YouTube" style="width: 30px; height: 30px; margin-right: 10px; border-radius: 50%; border: 2px solid white;">
+      Youtube Canais
+    </h1>
+    <ul>
+      <li style="display: flex; align-items: center; margin-bottom: 10px;">
+        <img src="https://yt3.googleusercontent.com/Qw9xBF2nBHR8DVnu39xUyq9sz8KQU4gqoXyyMSU938WctcSKP50HmnhILyUOhNRT3rVEaFyI5Yg=s120-c-k-c0x00ffffff-no-rj" alt="Technoraid" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+        <a href="https://www.youtube.com/@technoraidd" target="_blank" style="color: white; font-weight: bold; text-decoration: none;">Technoraid</a>
+      </li>
+    </ul>
+  </div>
+
+  <script src="rain.js"></script>
+  <script src="script.js"></script>
+  <script src="lang.js"></script>
+  <script src="musica.js"></script>
+  <script>
+    // Configuração do efeito de chuva para o Youtube
+    if (typeof iniciarChuva === 'function') {
+      iniciarChuva();
+    }
+  </script>
+</body>
+</html>
+
