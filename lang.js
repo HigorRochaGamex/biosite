@@ -11,20 +11,30 @@ function carregarIdioma(lang) {
 }
 
 function traduzirPagina(json) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const chave = el.getAttribute("data-i18n");
-    if (json[chave]) {
-      el.innerText = json[chave];
-    }
-  });
+	  document.querySelectorAll("[data-i18n]").forEach(el => {
+	    const chave = el.getAttribute("data-i18n");
+	    if (json[chave]) {
+	      // Se o elemento for um link do menu (<li><a>), ele terá a imagem como primeiro filho.
+	      if (el.tagName === 'A' && el.querySelector('img')) {
+	        // Para links do menu, o texto a ser traduzido é o último nó filho (Text Node)
+	        const textoAntigo = el.childNodes[el.childNodes.length - 1];
+	        if (textoAntigo && textoAntigo.nodeType === 3) { // 3 é o tipo para Text Node
+	          textoAntigo.nodeValue = " " + json[chave]; // Adiciona um espaço antes do texto
+	        }
+	      } else {
+	        // Para outros elementos, usa innerText
+	        el.innerText = json[chave];
+	      }
+	    }
+	  });
 
-  document.querySelectorAll("[data-i18n-html]").forEach(el => {
-    const chave = el.getAttribute("data-i18n-html");
-    if (json[chave]) {
-      el.innerHTML = json[chave];
-    }
-  });
-}
+	  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+	    const chave = el.getAttribute("data-i18n-html");
+	    if (json[chave]) {
+	      el.innerHTML = json[chave];
+	    }
+	  });
+	}
 
 function definirIdioma(lang) {
   localStorage.setItem(LANG_STORAGE_KEY, lang);

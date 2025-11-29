@@ -175,7 +175,11 @@ function iniciarChuva() {
 }
 
 // Inicializa a chuva no canvas principal com densidade e escala padrão
-initializeRain('rain', 100, 0.5);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', iniciarChuva);
+} else {
+  iniciarChuva();
+}
 
 // Chamar a função para carregar o menu ao iniciar a página
 carregarMenu();

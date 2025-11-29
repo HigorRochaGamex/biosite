@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>higor_rocha1123</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="musica.css" />
   <link rel="icon" href="perfil.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
@@ -38,7 +37,7 @@
     <div class="redes">
       <a href="https://instagram.com/higor_rocha1123" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://discord.com/invite/s5rXNPj9f7" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://youtube.com/@kironndev" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://youtube.com/@technoraidd" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
 
     <!-- Projetos removidos daqui; conteúdo agora em projetos.html -->
@@ -58,37 +57,6 @@
     </div>
   </div>
 
-  <!-- Player de Música Integrado -->
-  <div id="musicaPlayerContainer">
-    <div id="musicaPlayer">
-      <!-- Ícone de disco -->
-      <i id="iconeMusica" class="fas fa-compact-disc"></i>
-      
-      <!-- Barra de progresso e tempo -->
-      <div class="progress-container">
-        <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1">
-        <div class="time-display">
-          <span id="currentTime">0:00</span>
-          <span id="duration">0:00</span>
-        </div>
-      </div>
-      
-      <!-- Controles principais -->
-      <div class="controles-musica">
-        <button id="playPauseBtn" title="Play/Pause">
-          <i class="fas fa-play"></i>
-        </button>
-        <button id="proximaMusicaBtn" title="Próxima">
-          <i class="fas fa-forward"></i>
-        </button>
-        <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1" title="Volume">
-      </div>
-    </div>
-    
-    <!-- Elemento de áudio -->
-    <audio id="audioMusica"></audio>
-  </div>
-
   <div id="menu-sections" style="display: none;">
   <section id="discord-section" class="menu-section">Seção Discord</section>
   <section id="youtube-section" class="menu-section">Seção Youtube</section>
@@ -98,7 +66,6 @@
   <script src="rain.js"></script>
   <script src="script.js"></script>
   <script src="lang.js"></script>
-  <script src="musica.js"></script>
 </body>
 </html>
 

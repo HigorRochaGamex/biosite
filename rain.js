@@ -1,17 +1,31 @@
+const rainInstances = {};
+
 function initializeRain(canvasId, density = 175) { // Aumentando a densidade padrão para 75
+  // Avoid initializing multiple times for the same canvas
+  if (rainInstances[canvasId]) {
+    return;
+  }
+
   const canvas = document.getElementById(canvasId);
   if (!canvas) {
     console.error(`Canvas com ID ${canvasId} não encontrado.`);
     return;
   }
 
-  // Ajustar o tamanho do canvas para criar um efeito de zoom
-  canvas.width = window.innerWidth * 1.5; // Aumentar a largura do canvas
-  canvas.height = window.innerHeight * 1.5; // Aumentar a altura do canvas
-
   const ctx = canvas.getContext("2d");
-  const drops = [];
+  const dpr = window.devicePixelRatio || 1;
 
+  function setSize() {
+    canvas.width = Math.round(window.innerWidth * dpr);
+    canvas.height = Math.round(window.innerHeight * dpr);
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    // No explicit ctx.scale to avoid cumulative scaling (optional)
+  }
+
+  setSize();
+
+  const drops = [];
   for (let i = 0; i < density; i++) {
     drops.push({
       x: Math.random() * canvas.width,
@@ -40,8 +54,29 @@ function initializeRain(canvasId, density = 175) { // Aumentando a densidade pad
       }
     });
 
-    requestAnimationFrame(drawRain);
+    rainInstances[canvasId].rafId = requestAnimationFrame(drawRain);
   }
 
-  drawRain();
+  // start animation
+  rainInstances[canvasId] = { canvas, ctx, drops, rafId: null, setSize };
+  rainInstances[canvasId].rafId = requestAnimationFrame(drawRain);
+
+  // Recalculate size/density on resize to avoid stretching issues
+  const onResize = () => {
+    setSize();
+    // Optional: Recalculate drop positions to fit new size
+    drops.forEach(drop => {
+      drop.x = Math.random() * canvas.width;
+      drop.y = Math.random() * canvas.height;
+    });
+  };
+
+  window.addEventListener('resize', onResize);
+
+  // Provide a way to stop later if needed
+  rainInstances[canvasId].stop = () => {
+    cancelAnimationFrame(rainInstances[canvasId].rafId);
+    window.removeEventListener('resize', onResize);
+    delete rainInstances[canvasId];
+  };
 }

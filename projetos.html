@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Projetos - higor_rocha1123</title>
+    <title data-i18n="projetos_section_title">Projetos - higor_rocha1123</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="musica.css">
     <link rel="icon" href="perfil.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
@@ -14,39 +13,8 @@
   <canvas id="rain"></canvas>
 
   <div class="perfil">
-    <h1>Seção Projetos</h1>
-    <p>Conteúdo específico para a seção Projetos.</p>
-  </div>
-
-  <!-- Player de Música Integrado -->
-  <div id="musicaPlayerContainer">
-    <div id="musicaPlayer">
-      <!-- Ícone de disco -->
-      <i id="iconeMusica" class="fas fa-compact-disc"></i>
-      
-      <!-- Barra de progresso e tempo -->
-      <div class="progress-container">
-        <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1">
-        <div class="time-display">
-          <span id="currentTime">0:00</span>
-          <span id="duration">0:00</span>
-        </div>
-      </div>
-      
-      <!-- Controles principais -->
-      <div class="controles-musica">
-        <button id="playPauseBtn" title="Play/Pause">
-          <i class="fas fa-play"></i>
-        </button>
-        <button id="proximaMusicaBtn" title="Próxima">
-          <i class="fas fa-forward"></i>
-        </button>
-        <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1" title="Volume">
-      </div>
-    </div>
-    
-    <!-- Elemento de áudio -->
-    <audio id="audioMusica"></audio>
+    <h1 data-i18n="projetos_section_title">Seção Projetos</h1>
+    <p data-i18n="projetos_section_content">Conteúdo específico para a seção Projetos.</p>
   </div>
 
   <div id="seletorIdioma" class="idioma-box oculto">
@@ -57,13 +25,10 @@
       <button data-set-lang="ar" title="العربية">🇸🇦</button>
     </div>
   </div>
-    </div>
-  </div>
 
   <script src="rain.js"></script>
   <script src="script.js"></script>
   <script src="lang.js"></script>
-  <script src="musica.js"></script>
   <script>
     // Configuração do efeito de chuva para o Projetos
     if (typeof iniciarChuva === 'function') {
@@ -73,3 +38,4 @@
 </body>
 </html>
 
+  

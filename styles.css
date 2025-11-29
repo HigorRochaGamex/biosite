@@ -307,27 +307,25 @@ button:hover {
 /* Estilo para o menu lateral com bordas mais arredondadas e mais fino */
 .menu-lateral {
   position: fixed;
-  top: 0;
+  top: 18px; /* keep inside viewport */
+  bottom: 18px; /* keep inside viewport */
   left: 0;
-  width: 240px; /* Reduzindo a largura */
-  height: 100%;
+  width: 240px; /* keeps fixed width */
+  max-height: calc(100vh - 36px);
   background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
   color: white;
   z-index: 10000;
   display: block;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
-  overflow-y: auto;
-  border-radius: 15px; /* Bordas mais arredondadas */
+  overflow-y: auto; /* allow internal scrolling */
+  border-radius: 15px; /* visible rounded edges */
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.863);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.829);
 }
 
 .menu-lateral.oculto {
   display: none !important;
-}
-
-/* Adicionando bordas brancas ao redor do menu lateral */
-#menuLateral {
-  border: 2px solid white; /* Contorno branco */
-  border-bottom: 2px solid white; /* Contorno branco na parte inferior */
 }
 
 /* Cabeçalho do menu com foto de perfil */

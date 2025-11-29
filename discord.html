@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Discord - higor_rocha1123</title>
+    <title data-i18n="discord_title">Discord - higor_rocha1123</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="musica.css">
     <link rel="icon" href="perfilredondo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
@@ -15,45 +14,37 @@
 
   <!-- Estrutura organizada com título, descrição, botões e lista -->
   <header class="banner-discord">
-    <h1>Discord - Servidores e Bots</h1>
+    <h1 data-i18n="discord_title">Discord - Servidores e Bots</h1>
   </header>
 
   <div class="descricao-discord">
-    <p>Explore meus projetos para comunidade.</p>
+    <p data-i18n="descricao_discord">Explore meus projetos para comunidade.</p>
   </div>
 
   <!-- Botões para navegação centralizados e organizados verticalmente -->
   <div class="botoes-discord centralizado">
-    <button onclick="mostrarSecao('servidores')" class="botao-discord">Servidores</button>
-    <button onclick="mostrarSecao('bots')" class="botao-discord">Bots</button>
+    <button data-i18n="servidores" onclick="mostrarSecao('servidores')" class="botao-discord">Servidores</button>
+    <button data-i18n="bots" onclick="mostrarSecao('bots')" class="botao-discord">Bots</button>
   </div>
 
   <div id="servidores" class="conteudo-discord oculto">
     <h2>Servidores</h2>
     <ul>
       <li>
-        <img src="https://cdn.discordapp.com/icons/1284212577420705824/b50ba9ac662ef113447e418f6a07034b.webp?size=1024" alt="Servidor 1" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo1" target="_blank">Higor Rocha Gamex</a>
+        <img src="https://cdn.discordapp.com/icons/1284212577420705824/1d2808db665af715bd50b11292611e7d.webp?size=1024" alt="Servidor 1" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+        <a href="https://discord.com/invite/s5rXNPj9f7" target="_blank">Higor Rocha Gamex</a>
       </li>
       <li>
         <img src="https://cdn.discordapp.com/icons/1404937982581932123/ffaa77840b517d00d8b43cd9b0307701.webp?size=1024" alt="Servidor 2" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo2" target="_blank">Mobile Launcher</a>
+        <a href="https://discord.gg/RdYfRKPC9M" target="_blank">Mobile Launcher</a>
       </li>
       <li>
         <img src="https://cdn.discordapp.com/icons/1423067239145406536/dec2e24c0b8ae680f4198a1ed7e51303.webp?size=1024" alt="Servidor 3" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo3" target="_blank">Realm (Relíquias)</a>
+        <a href="https://discord.gg/SjB6zJPH55" target="_blank">Realm (Relíquias)</a>
       </li>
       <li>
-        <img src="https://cdn.discordapp.com/icons/1413190253979762830/980b22aba7a5ebec715768530ce06bcf.webp?size=1024" alt="Servidor 4" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo4" target="_blank">Realm (Reinos Em Conflito 2°Tem)</a>
-      </li>
-      <li>
-        <img src="https://cdn.discordapp.com/icons/1287796070893490188/4f27f59e8b2bd9cab6d6b2385d11ca48.webp?size=1024" alt="Servidor 5" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo5" target="_blank">Clã MC (Os Piratas)</a>
-      </li>
-      <li>
-        <img src="https://cdn.discordapp.com/icons/1256773542209654814/f570048c84eb8a425256cbccbea369de.webp?size=1024" alt="Servidor 6" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-        <a href="https://discord.gg/exemplo6" target="_blank">Servidor BDS (Resistencia)</a>
+        <img src="https://cdn.discordapp.com/icons/1287796070893490188/4f27f59e8b2bd9cab6d6b2385d11ca48.webp?size=1024" onerror="this.src='img/off.png';" alt="Servidor 5" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+        <a href="https://discord.gg/G9TY8w5ZKb" target="_blank">Clã MC (Os Piratas)</a>
       </li>
     </ul>
   </div>
@@ -63,7 +54,7 @@
     <h2>Bots</h2>
     <ul>
       <li>
-        <img src="https://cdn.discordapp.com/icons/1287796070893490188/4f27f59e8b2bd9cab6d6b2385d11ca48.webp?size=1024" alt="Bot Kraken" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+        <img src="https://cdn.discordapp.com/avatars/1353815555613655070/e0cafe57ea7349a597c3f4cb7e0e48b3.webp?size=1024" onerror="this.src='img/off.png';" alt="Bot Kraken" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
         <span style="color: white; font-weight: bold;">Kraken</span>
       </li>
     </ul>
@@ -76,37 +67,6 @@
       <button data-set-lang="es" title="Español">🇪🇸</button>
       <button data-set-lang="ar" title="العربية">🇸🇦</button>
     </div>
-  </div>
-
-  <!-- Player de Música Integrado -->
-  <div id="musicaPlayerContainer">
-    <div id="musicaPlayer">
-      <!-- Ícone de disco -->
-      <i id="iconeMusica" class="fas fa-compact-disc"></i>
-      
-      <!-- Barra de progresso e tempo -->
-      <div class="progress-container">
-        <input type="range" id="progressBar" min="0" max="100" value="0" step="0.1">
-        <div class="time-display">
-          <span id="currentTime">0:00</span>
-          <span id="duration">0:00</span>
-        </div>
-      </div>
-      
-      <!-- Controles principais -->
-      <div class="controles-musica">
-        <button id="playPauseBtn" title="Play/Pause">
-          <i class="fas fa-play"></i>
-        </button>
-        <button id="proximaMusicaBtn" title="Próxima">
-          <i class="fas fa-forward"></i>
-        </button>
-        <input type="range" id="controleVolume" min="0" max="1" step="0.01" value="1" title="Volume">
-      </div>
-    </div>
-    
-    <!-- Elemento de áudio -->
-    <audio id="audioMusica"></audio>
   </div>
 
   <style>
@@ -190,7 +150,6 @@
   <script src="rain.js"></script>
   <script src="script.js"></script>
   <script src="lang.js"></script>
-  <script src="musica.js"></script>
   <script>
     // Configuração do efeito de chuva para o Discord
     if (typeof iniciarChuva === 'function') {
