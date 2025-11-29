@@ -1,14 +1,20 @@
 {
-  "projetos": "Proyectos",
-  "categoria_minecraft": "Minecraft (Bedrock)",
-  "titulo_categoria_minecraft": "Minecraft (Bedrock)",
-  "download_windows": "🟢 Descargar Minecraft Windows",
-  "download_bedrock": "🟢 Descargar Minecraft Bedrock",
-  "skins_3d_4d": "🟢 Skins 3D/4D de Minecraft",
-  "marketplace_gratis": "🟢 Marketplace Gratis",
-  "servidor_realm": "🟢 Servidor Realm Bedrock",
-  "servidor_java_bedrock": "🟡 Servidor Java & Bedrock",
-  "modal_msg": "Serás redirigido a Discord para saber más sobre <strong id=\"nomeProjeto\"></strong>.",
-  "continuar": "Continuar",
-  "cancelar": "Cancelar"
+  "menu_item0": "Home",
+  "menu_item1": "Discord Servers",
+  "menu_item2": "YouTube Channels",
+  "menu_item3": "Projects",
+
+  "discord_title": "Discord - Servers & Bots",
+  "descricao_discord": "Explore my community projects.",
+  "servidores": "Servers",
+  "bots": "Bots",
+  "youtube_title": "YouTube Channels",
+  "inicio": "Home",
+
+  "projetos_section_title": "Projects Section",
+  "projetos_section_content": "Specific content for the Projects section.",
+
+  "modal_msg": "You will be redirected to Discord to learn more about <strong id=\"nomeProjeto\"></strong>.",
+  "continuar": "Continue",
+  "cancelar": "Cancel"
 }
